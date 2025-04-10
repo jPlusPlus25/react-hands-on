@@ -1,9 +1,24 @@
 import "./App.css"
 
-function App() {
-  
-
-  return <h1>Hello World!</h1>
+import Title from "./Title.jsx";//import
+import Product from "./Product.jsx";  
+function Description(){
+  return <h3>I am the Description!</h3>;
 }
 
-export default App
+
+function App() {
+  return (
+    <div>
+  
+  <Product/>
+  
+  <Product/>
+  
+  </div>
+  );
+
+}
+
+export default App;
+
