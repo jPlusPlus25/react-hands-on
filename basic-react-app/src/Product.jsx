@@ -1,10 +1,13 @@
 import "./Product.css";
-function Product(props){
-    console.log(props);
+import Title from "./Title";
+function Product({Title,price,features,features2}){
+    
     return (
         <div className="Product">
-            <h3>Product Title</h3>
-            <h5>Product Description</h5>
+            <h3>{Title}</h3>
+            <h5>Price:{price}</h5>
+            <p>{features}</p>
+            <p>{features2.a}</p>
         </div>
     );
 }
