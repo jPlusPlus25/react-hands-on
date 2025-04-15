@@ -1,10 +1,10 @@
 import { useState } from "react"
 
 export default function LudoBoard(){
-    let [Moves,setlueMove]=useState({blue:0,red:0,yellow:0,green:0});
+    let [Moves,setMoves]=useState({blue:0,red:0,yellow:0,green:0});
     let updateBlue=()=>{
-        Moves.blue+=1;
         console.log(`Moves.blue=${Moves.blue}`);
+        setMoves({...Moves,blue:Moves.blue+1});
     };
     return (
         <div>
