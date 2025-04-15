@@ -13,7 +13,9 @@ export default function Counter(){
         setCount((currentCount)=>{
            return currentCount+1;
         });
-       
+        setCount((currentCount)=>{
+            return currentCount+1;
+         });
        
     }
     
