@@ -7,7 +7,7 @@ export default function Counter(){
     console.log("componant is render");
     console.log(`count=${Count}`);
     let incCount=()=>{
-        setCount(Count+1);
+        setCount(Count+2);
         console.log(`inside incCount ,count=${Count}`);
     }
     
