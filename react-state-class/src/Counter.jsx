@@ -4,9 +4,11 @@ import { use, useState } from "react";
 export default function Counter(){
     
     let [Count,setCount]=useState(0);
+    console.log("componant is render");
+    console.log(`count=${Count}`);
     let incCount=()=>{
         setCount(Count+1);
-        console.log(Count);
+        console.log(`inside incCount ,count=${Count}`);
     }
     
     
