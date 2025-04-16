@@ -1,12 +1,23 @@
 import { useState } from "react";
 
 export default function TodoList(){
-    let [todos,setTodo]=useState();
+    let [todos,setTodo]=useState(["sample task"]);
+    let [newTodo,setNewTodo]=useState("");
+    
+    let addNewTask=()=>{
+        console.log("we have to add new task in todo");
+    }; 
+    let updateTodoVal=(event)=>{
+        console.log(event.target,value);
+    }
     return (
     <div>
-        <input placeholder="add a task"></input>
+        <input placeholder="add a task" 
+        value={newTodo} 
+        onChange={updateTodoVal}
+        ></input>
         <br></br>
-        <button>add task</button>
+        <button onClick={addNewTask}>add task</button>
         <br></br>
         <br></br>
         <br></br>
@@ -14,9 +25,10 @@ export default function TodoList(){
         <hr></hr>
         <h4>Todo List</h4>
         <ul>
-           { todos.map((todo) => {
-                return <li>{todo}</li>
-            })}
+           { todos.map((todo) => (
+                <li>{todo}</li>
+            ))}
         </ul>
-    </div>);
+    </div>
+    );
 }
