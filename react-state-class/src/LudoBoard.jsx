@@ -12,7 +12,8 @@ export default function LudoBoard(){
             };
         });*/
         
-        Setarr((prearr)=>[...prearr,"blue moves"]);
+        Setarr((prevarr)=> {return [...prevarr,"blue moves"];
+        });
         console.log(arr);
     };
     let updateYellow=()=>{
@@ -35,7 +36,7 @@ export default function LudoBoard(){
         setMoves((prevMoves)=>{
             return {
                 ...prevMoves,
-                rede:prevMoves.red+1
+                red:prevMoves.red+1
             };
         });
     };
