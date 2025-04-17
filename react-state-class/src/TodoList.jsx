@@ -2,16 +2,33 @@ import { useState } from "react";
 import { v4 as uuidv4 } from 'uuid';
 
 export default function TodoList(){
-    let [todos,setTodo]=useState([{task:"sample-task" , id: uuidv4()}]);
+    let [todos,setTodos]=useState([{task:"sample-task" , id: uuidv4()}]);
     let [newTodo,setNewTodo]=useState("");
     
     let addNewTask=()=>{
-       setTodo([...todos,{task:newTodo,ud:uuidv4()}]);
+       setTodos((prevTodos)=>{
+        return [...prevTodos,{task:newTodo,ud:uuidv4()}]
+       });
        setNewTodo("");
     }; 
     let updateTodoVal=(event)=>{
         setNewTodo(event.target.value);
     }
+    let deleteTodo=(id)=>{
+        setTodos(todos.filter((todo)=>todo.id !=id));
+        
+    };
+    let upperCaseAll =()=>{
+      setTodos( (prevTodos)=>(
+       prevTodos.map((todo)=>{
+           return {
+            ...todo,
+            task:todo.task.toUpperCase(),
+            };
+        })
+
+      ))
+    };
     return (
     <div>
         <input placeholder="add a task" 
@@ -25,12 +42,16 @@ export default function TodoList(){
         <br></br>
         <br></br>
         <hr></hr>
-        <h4>Todo List</h4>
+        <h4>Tasks Todo</h4>
         <ul>
            { todos.map((todo) => (
-                <li key={todo.id}>{todo.task}</li>
+                <li key={todo.id}>
+                   <span> {todo.task}</span>
+                   <button onClick={()=>deleteTodo(todo.id)}>delete</button>
+                </li>
             ))}
         </ul>
+        <button onClick={upperCaseAll}>UpperCase All</button>
     </div>
     );
 }
