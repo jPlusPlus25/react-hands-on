@@ -52,8 +52,8 @@ export default function TodoList(){
            { todos.map((todo) => (
                 <li key={todo.id}>
                    <span> {todo.task}</span>
-                   <button onClick={()=>deleteTodo(todo.id)}>delete</button>
-                   <button onClick={()=>UpperCaseone(todo.id)}>UpperCase One</button>
+                   {/* <button onClick={()=>deleteTodo(todo.id)}>delete</button>
+                   <button onClick={()=>UpperCaseone(todo.id)}>UpperCase One</button> */}
                 </li>
             ))}
         </ul>
