@@ -44,8 +44,8 @@ export default function TodoList(){
         <button onClick={addNewTask}>add task</button>
         <br></br>
         <br></br>
-        <br></br>
-        <br></br>
+        {/* <br></br>
+        <br></br> */}
         <hr></hr>
         <h4>Tasks Todo</h4>
         <ul>
