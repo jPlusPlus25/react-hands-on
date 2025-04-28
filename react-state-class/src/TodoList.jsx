@@ -7,7 +7,7 @@ export default function TodoList(){
     
     let addNewTask=()=>{
        setTodos((prevTodos)=>{
-        return [...prevTodos,{task:newTodo,ud:uuidv4()}]
+        return [...prevTodos,{task:newTodo,id:uuidv4()}]
        });
        setNewTodo("");
     }; 
@@ -19,20 +19,34 @@ export default function TodoList(){
         
     };
     let upperCaseAll =()=>{
-      setTodos( (prevTodos)=>(
+      setTodos( (prevTodos)=>
        prevTodos.map((todo)=>{
-        
+        if(todo.id===id){
            return {
             ...todo,
             task:todo.task.toUpperCase(),
             };
-       
-    })
-
-      ))
+        }else{
+            return todo;
+            };
+        })
+      );
     };
-    let UpperCaseone=()=>{
-
+    let UpperCaseone=(id)=>{
+        setTodos( (todos)=>
+            todos.map((todo)=>{
+             if(todo.id==id){
+                return {
+                 ...todo,
+                 task:todo.task.toUpperCase(),
+                 };
+                }else{
+                    return todo;
+                }
+             
+         })
+     
+         );
     }
     return (
     <div>
