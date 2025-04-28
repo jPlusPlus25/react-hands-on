@@ -20,21 +20,15 @@ export default function TodoList(){
     };
     let upperCaseAll =()=>{
       setTodos( (prevTodos)=>
-       prevTodos.map((todo)=>{
-        if(todo.id===id){
-           return {
+       prevTodos.map((todo)=>({
             ...todo,
             task:todo.task.toUpperCase(),
-            };
-        }else{
-            return todo;
-            };
-        })
+        }))
       );
     };
     let UpperCaseone=(id)=>{
-        setTodos( (todos)=>
-            todos.map((todo)=>{
+        setTodos( (prevTodos)=>
+            prevTodos.map((todo)=>{
              if(todo.id==id){
                 return {
                  ...todo,
@@ -43,7 +37,6 @@ export default function TodoList(){
                 }else{
                     return todo;
                 }
-             
          })
      
          );
