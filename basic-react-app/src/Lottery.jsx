@@ -1,5 +1,15 @@
+import { useState } from "react";
+import  "./Lottery.css";
 export default function Lottery(){
-    return(<div>
+    let [ticket,setTicket]=useState([0,0,0]);
+    return(
+    <div>
         <h1>Lottery Game!</h1>
-    </div>)
+        <div className="ticket">
+        <span>{ticket[0]}</span>
+        <span>{ticket[1]}</span>
+        <span>{ticket[2]}</span>
+        </div>
+    </div>
+    );
 }
