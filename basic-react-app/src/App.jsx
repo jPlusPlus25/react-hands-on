@@ -4,13 +4,15 @@ import Producttab from "./Producttab.jsx";
 import Button from "./Button.jsx";
 import Form from "./Form.jsx";
 import Lottery from "./Lottery.jsx";
-
+import Form1 from "./Form1.jsx";
+import Ticket from "./Ticket.jsx";
 function App(){
     
     return(
         <>
         
-        <Lottery/>
+        <Form1/>
+        
         </>
     );
 }
