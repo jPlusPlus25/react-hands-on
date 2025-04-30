@@ -15,17 +15,14 @@ export default function Form(){
     //     setUsername(event.target.value);
     // }
     let handleInputChange = () => {
-        let fieldName=event.target.name;
-        let newValue =event.target.value;
-        
-        setFormData((currData)=>{
+         setFormData((currData)=>{
            currData[fieldName] =newValue;
-           
-           return {...currData};
-         })
-    }
+           return {...currData,[event.target.name]: event.target.value };
+         });
+    };
     let handleSubmit=(event)=>{
         event.preventDefault();
+        console.log(formData);
         setFormData({
             fullName:"",
             username:"",
